@@ -1,4 +1,4 @@
-package spring_tutor_7;
+package spring_8;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -14,7 +14,7 @@ public class TennisCoach implements Coach {
     }
 
     @Autowired
-    public TennisCoach(FortuneService fortuneService) {
+    public TennisCoach(@Qualifier("sadFortuneService") FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 
