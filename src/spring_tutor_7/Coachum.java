@@ -9,6 +9,7 @@ public class Coachum {
 
     public Coachum(){
         Name = "coachum ilhan";
+        System.out.println("inside coachum constructor");
     }
 
 

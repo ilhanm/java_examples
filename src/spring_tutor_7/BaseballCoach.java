@@ -4,27 +4,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TennisCoach implements Coach {
+public class BaseballCoach implements Coach {
 
     private FortuneService fortuneService;
-    private String condition;
 
-    public TennisCoach() {
-    }
 
     @Autowired
-    public TennisCoach(FortuneService fortuneService) {
+    public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 
     @Override
     public String getBirthdayWish() {
-        return "happy birthday cunt";
+        return "hepi niv yir anam";
     }
 
     @Override
     public String getDailyFortune() {
-        return this.fortuneService.getFortune() ;
+        return fortuneService.getFortune();
     }
-
 }
