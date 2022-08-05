@@ -18,7 +18,7 @@ public class BaseballCoach implements Coach {
 
     @Override
     public String getBirthdayWish() {
-        return "hepi niv yir anam";
+        return "hepi niv yir";
     }
 
     @Override

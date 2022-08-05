@@ -1,3 +1,5 @@
+chad-spring modul 8-9 birleşik
+-
 Annotation kullanarak 3 farklı şekilde injection yapılabiliyor.
 Constructor injection
 Setter injection

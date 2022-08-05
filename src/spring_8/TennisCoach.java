@@ -2,11 +2,13 @@ package spring_8;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+//@Scope("prototype")
 @Component
 public class TennisCoach implements Coach {
 
@@ -17,13 +19,13 @@ public class TennisCoach implements Coach {
     }
 
     @Autowired
-    public TennisCoach(@Qualifier("sadFortuneService") FortuneService fortuneService) {
+    public TennisCoach(@Qualifier("fileFortuneService") FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 
     @Override
     public String getBirthdayWish() {
-        return "happy birthday cunt";
+        return "happy birthday mate";
     }
 
     @Override

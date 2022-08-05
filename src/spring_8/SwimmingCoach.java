@@ -2,9 +2,12 @@ package spring_8;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
+
+//@Component
+@Scope("prototype")
 public class SwimmingCoach implements Coach{
 
     @Autowired
