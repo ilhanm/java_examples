@@ -9,6 +9,7 @@ public class constructorInjectionApp {
         Coach myCoach = ctx.getBean("tennisCoach", Coach.class);
         System.out.println(myCoach.getBirthdayWish());
         System.out.println(myCoach.getDailyFortune());
+        ctx.close();
     }
 
 }
