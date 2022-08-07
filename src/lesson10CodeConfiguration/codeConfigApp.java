@@ -10,9 +10,11 @@ public class codeConfigApp {
                 new AnnotationConfigApplicationContext(SportConfig.class);
 //        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("javaCodeConfiguration/appCtx.xml");
         // get the bean from spring container
-        Koc theCoach = context.getBean("swimCoach", Koc.class);
+        Koc theCoach = context.getBean("yuzmeKocu", Koc.class);
         // call method to get the daily fortune
         System.out.println(theCoach.getDailyFortune());
+        System.out.println(theCoach.getTeam());
+        System.out.println(theCoach.getEmail());
 
         // close the context
         context.close();
