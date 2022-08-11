@@ -18,19 +18,21 @@ public class ReadStudentDemo {
 
         // create session
         Session session = factory.getCurrentSession();
+        Student mainStudent = new Student("Mert", "A", "ilma@luv2code.com");
 
         try {
             // create a student object
             System.out.println("Creating new student object...");
-            Student tempStudent = new Student("Daffy", "Duck", "daffy@luv2code.com");
+            Student tempStudent = new Student("Ilhan", "M", "ima@luv2code.com");
 
             // start a transaction
             session.beginTransaction();
-
+            System.out.println("Student id before session.save " + tempStudent.getId());
             // save the student object
             System.out.println("Saving the student...");
             System.out.println(tempStudent);
             session.save(tempStudent);
+            session.save(mainStudent);
 
             // commit transaction
             session.getTransaction().commit();
@@ -58,6 +60,12 @@ public class ReadStudentDemo {
         }
         finally {
             factory.close();
+            System.out.println(mainStudent.getId());
+            /*
+            when we create object its id is 0,
+             after we save this object to the session,
+            it takes its new id from db(with the help of database auto_increment feature)
+            * */
         }
     }
 
