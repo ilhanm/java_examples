@@ -19,6 +19,11 @@ public class InstructorDetail {
     @Column(name = "hobby")
     private String hobby;
 
+    @OneToOne(mappedBy = "instructorDetail", cascade = CascadeType.ALL) //mappedBy içerisine owning side'daki(instructor) mapping attribute ını alır.
+    private Instructor instructor;
+
+
+
     public InstructorDetail() {
 
     }
@@ -36,20 +41,28 @@ public class InstructorDetail {
         this.id = id;
     }
 
-    public String getYoutube_channel() {
-        return youtubeChannel;
-    }
-
-    public void setYoutube_channel(String youtube_channel) {
-        this.youtubeChannel = youtube_channel;
-    }
-
     public String getHobby() {
         return hobby;
     }
 
     public void setHobby(String hobby) {
         this.hobby = hobby;
+    }
+
+    public String getYoutubeChannel() {
+        return youtubeChannel;
+    }
+
+    public void setYoutubeChannel(String youtubeChannel) {
+        this.youtubeChannel = youtubeChannel;
+    }
+
+    public Instructor getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
     }
 
     @Override

@@ -1,5 +1,7 @@
-package com.ilhan.hb_onetoone_uni.demo.entity;
+package com.ilhan.hb_onetoone_uni.demo;
 
+import com.ilhan.hb_onetoone_uni.demo.entity.Instructor;
+import com.ilhan.hb_onetoone_uni.demo.entity.InstructorDetail;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
