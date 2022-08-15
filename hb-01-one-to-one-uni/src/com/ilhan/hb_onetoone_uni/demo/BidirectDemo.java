@@ -23,7 +23,11 @@ public class BidirectDemo {
             System.out.println("My Instructor : " + myInstructor);
             session.getTransaction().commit();
         }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
         finally {
+            session.close();
             factory.close();
         }
 
