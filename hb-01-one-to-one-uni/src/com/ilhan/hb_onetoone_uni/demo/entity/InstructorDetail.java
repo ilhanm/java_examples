@@ -19,7 +19,7 @@ public class InstructorDetail {
     @Column(name = "hobby")
     private String hobby;
 
-    @OneToOne(mappedBy = "instructorDetail", cascade = CascadeType.ALL) //mappedBy içerisine owning side'daki(instructor) mapping attribute ını alır.
+    @OneToOne(mappedBy = "instructorDetail", cascade = {CascadeType.DETACH,CascadeType.PERSIST,CascadeType.REFRESH,CascadeType.MERGE}) //mappedBy içerisine owning side'daki(instructor) mapping attribute ını alır.
     private Instructor instructor;
 
 
