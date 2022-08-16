@@ -23,19 +23,20 @@ public class CreateDemo {
 
         try {
             // create objects
-            Instructor tempInstructor = new Instructor("Chad","Darby","chad@lv2cd.com");
+            Instructor tempInstructor = new Instructor("shouldve","notnullDetailId","bnew@lv2cd.com");
 
-            InstructorDetail tempInstructorDetail = new InstructorDetail("youtube.com/chad","painting");
+            InstructorDetail tempInstructorDetail = new InstructorDetail("youtube.com/bnew","branDNew");
 
             //associate the objects
-            tempInstructor.setInstructorDetail(tempInstructorDetail);
 
+            tempInstructorDetail.setInstructor(tempInstructor);
+            tempInstructor.setInstructorDetail(tempInstructorDetail);
             // start a transaction
             session.beginTransaction();
 
             //save the instructor
             // It will also save the instructorDetails because of the CascadeType.ALL
-            session.save(tempInstructor);
+            session.save(tempInstructorDetail);
 
             System.out.println("saved instructor: "+ tempInstructor);
 
