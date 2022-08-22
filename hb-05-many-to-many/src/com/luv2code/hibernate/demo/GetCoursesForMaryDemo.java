@@ -33,7 +33,7 @@ public class GetCoursesForMaryDemo {
 			session.beginTransaction();
 				
 			// get the student from database
-			int studentId = 1;
+			int studentId = 2;
 			Student tempStudent = session.get(Student.class, studentId);
 			
 			System.out.println("\nLoaded student: " + tempStudent);
