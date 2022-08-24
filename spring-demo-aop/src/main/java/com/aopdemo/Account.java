@@ -1,7 +1,7 @@
 package com.aopdemo;
 
 public class Account {
-    private String name;
+    private String name="ilhan";
     private String level;
 
     public String getName(){
