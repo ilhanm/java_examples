@@ -1,5 +1,6 @@
 package com.aopdemo.aspect;
 
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -16,11 +17,23 @@ public class MyDemoLoggingAspect {
     @Pointcut("execution(* com.aopdemo.dao.*.*(..))")
     private void forDaoPackage(){};
 
+    @Pointcut("execution(* com.aopdemo.Account.*(..))")
+    private void forAccountClass(){};
+
+    @Pointcut("forDaoPackage() || forAccountClass()")
+    private void forDaoAndAccountClass(){}
+
+
 
     //@Before("execution(* addAccount(com.aopdemo.Account))")
-    @Before("forDaoPackage()")
+    @Before("forDaoAndAccountClass()")
     public void beforeAddAccountAdvice(){
-        System.out.println("\n =====> Executing @Before advice on addAccount()");
+        System.out.println("\n =====> Executing @Before advice on Dao package classes and Bacount class");
+    }
+
+    @After("forDaoPackage()")
+    public void afterUsingDAO(){
+        System.out.println("dao method is finished");
     }
 
     /*

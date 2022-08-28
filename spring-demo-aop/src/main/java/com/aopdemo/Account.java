@@ -1,5 +1,8 @@
 package com.aopdemo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Account {
     private String name="ilhan";
     private String level;
@@ -12,7 +15,7 @@ public class Account {
     }
 
     public String getLevel(){
-        return name;
+        return level;
     }
 
     public void setLevel(String level){
@@ -26,4 +29,9 @@ public class Account {
                 ", level='" + level + '\'' +
                 '}';
     }
+
+    public void accountInfo(){
+        System.out.println("This is an account object of "+ getName() +" which is level of " + getLevel());
+    }
+
 }

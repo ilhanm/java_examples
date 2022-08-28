@@ -1,4 +1,4 @@
-package com.aopdemo.ooptests.staticTest;
+package com.aopdemo.ooptests_UnrelatedWithProject.staticTest;
 
 public class Child extends Parent{
     public static void greeting(){
