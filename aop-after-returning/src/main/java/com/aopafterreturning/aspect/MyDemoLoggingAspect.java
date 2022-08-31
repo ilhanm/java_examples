@@ -53,10 +53,19 @@ public class MyDemoLoggingAspect {
 	public void afterReturningFindAccountsAdvice(JoinPoint theJoinPoint, List<Account> result){
 		MethodSignature mySign = (MethodSignature) theJoinPoint.getSignature();
 		System.out.println("After AOP Method Signature: " +mySign);
+		System.out.println("results before post-processing: " + result);
+		makeFirstNameUppercaseAccounts(result);
+		System.out.println("results after post-processing: " + result);
+	}
+
+	private void makeFirstNameUppercaseAccounts(List<Account> accounts) {
+		for(Account account: accounts){
+			String name = account.getName().toUpperCase();
+			account.setName(name);
+		}
 	}
 
 
-	
 }
 
 
