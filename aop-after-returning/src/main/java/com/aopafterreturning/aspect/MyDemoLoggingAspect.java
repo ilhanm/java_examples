@@ -3,6 +3,7 @@ package com.aopafterreturning.aspect;
 import com.aopafterreturning.Account;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -56,6 +57,11 @@ public class MyDemoLoggingAspect {
 		System.out.println("results before post-processing: " + result);
 		makeFirstNameUppercaseAccounts(result);
 		System.out.println("results after post-processing: " + result);
+	}
+
+	@AfterThrowing(pointcut = ("execution(* com.aopafterreturning.dao.AccountDAO.*(..))") , throwing = "ex")
+	public void afterThrowingFindAccountsAdvice(Exception ex){
+		System.out.println("Exception occurred: " + ex);
 	}
 
 	private void makeFirstNameUppercaseAccounts(List<Account> accounts) {

@@ -56,6 +56,18 @@ public class AccountDAO {
 		System.out.println("inside findAccounts method");
 		return  myAccounts;
 	}
+
+	public List<Account> simulatingAfterThrowing(boolean foo){
+		// @AfterThrowing used for when join-point method couldn't finish successfully and throwing an exception.
+		System.out.println("Currently, we are in the simulatingAfterThrowing() method");
+		if(foo){
+		throw new RuntimeException("You shall not pass!!!");
+		}
+		else{
+			List<Account> myAccs = new ArrayList<Account>(){{add(new Account("Mert","Çömez"));}};
+			return myAccs;
+		}
+	}
 	
 	
 	
